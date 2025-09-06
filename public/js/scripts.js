@@ -123,14 +123,47 @@ leftBtn.onclick = function () {
 };
 
 // audio
-const audio = document.getElementById("mi-audio");
-audio.volume = 0.4;
-// Intentar autoplay
-audio.play().catch(() => {
-  console.log("Autoplay bloqueado, espera interacción del usuario");
-});
+// const audio = document.getElementById("mi-audio");
+// audio.volume = 0.4;
+// // Intentar autoplay
+// audio.play().catch(() => {
+//   console.log("Autoplay bloqueado, espera interacción del usuario");
+// });
 
-// Reproducir al primer click si fue bloqueado
-window.addEventListener("click", () => {
-  if (audio.paused) audio.play();
-});
+// // Reproducir al primer click si fue bloqueado
+// window.addEventListener("click", () => {
+//   if (audio.paused) audio.play();
+// });
+const audio = document.getElementById('mi-audio');
+const btnPause = document.getElementById('btn-pause-music');
+const btnPlay = document.getElementById('btn-play-music');
+const musicControls = btnPause.parentElement;
+audio.volume = 0.4;
+// Oculta los controles al inicio
+musicControls.style.display = 'none';
+
+// Espera el primer clic en cualquier parte de la página
+let musicStarted = false;
+function startMusicOnFirstClick() {
+  if (!musicStarted) {
+    audio.play();
+    musicControls.style.display = '';
+    btnPause.style.display = '';
+    btnPlay.style.display = 'none';
+    musicStarted = true;
+    document.removeEventListener('click', startMusicOnFirstClick);
+  }
+}
+document.addEventListener('click', startMusicOnFirstClick);
+
+// Control de botones
+btnPause.onclick = function() {
+  audio.pause();
+  btnPause.style.display = 'none';
+  btnPlay.style.display = '';
+};
+btnPlay.onclick = function() {
+  audio.play();
+  btnPlay.style.display = 'none';
+  btnPause.style.display = '';
+};
