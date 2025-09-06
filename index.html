@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación de Graduación</title>
     <link rel="stylesheet" href="./public/css/estilos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
@@ -13,7 +17,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Invitación Especial</h1>
+      <!-- <h1>Invitación Especial</h1> -->
       <!-- ...existing code... -->
       <div
         class="invitacion zoom-effect"
@@ -33,17 +37,67 @@
         <span class="close-modal" id="close-modal">&times;</span>
         <img class="modal-content-img" id="img-modal-content" />
       </div>
-
+      <!-- Mensaje especial -->
+      <div class="mensaje">
+        <p>
+          "Después de esfuerzo y dedicación, llegó el momento de celebrar este
+          logro especial. ¡Espero contar con tu presencia!"
+        </p>
+      </div>
+      <!-- Galería de fotos -->
+      <div class="galeria">
+        <h2>Momentos Especiales</h2>
+        <button class="btn-scroll" id="scroll-left">&#10094;</button
+        ><button class="btn-scroll" id="scroll-right">&#10095;</button>
+        <div class="scroll-fotos" id="galeria-fotos">
+          <img src="./public/images/acto_1.jpg" alt="Foto 1" />
+          <img src="./public/images/acto_2.jpg" alt="Foto 2" />
+          <img src="./public/images/acto_3.jpg" alt="Foto 3" />
+          <img src="./public/images/acto_4.jpg" alt="Foto 4" />
+          <img src="./public/images/acto_5.jpg" alt="Foto 5" />
+          <img src="./public/images/acto_6.jpg" alt="Foto 6" />
+          <img src="./public/images/acto_7.jpg" alt="Foto 7" />
+          <img src="./public/images/acto_8.jpg" alt="Foto 8" />
+          <img src="./public/images/acto_9.jpg" alt="Foto 9" />
+          <img src="./public/images/acto_10.jpg" alt="Foto 10" />
+        </div>
+      </div>
+      <!-- Cuenta regresiva -->
+      <div class="countdown">
+        <h2>Faltan</h2>
+        <div id="timer"></div>
+      </div>
       <!-- Google Maps (reemplaza con tu ubicación) -->
       <div class="mapa">
-        <h1>Lugar del evento</h1>
+        <h2>Lugar del evento</h2>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.258833145885!2d-63.109497!3d-17.827959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLTE3LjgyNzk1OSAtNjMuMTA5NDk3!5e0!3m2!1ses!2s!4v1693945600000!5m2!1ses!2s"
           allowfullscreen=""
           loading="lazy"
         >
         </iframe>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=-17.827959,-63.109497"
+          target="_blank"
+          class="btn-maps"
+        >
+          Ver en Google Maps
+        </a>
       </div>
+      <!-- Botón para confirmar asistencia -->
+      <!-- <div class="rsvp">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdeNosrxQPqZATBMbmvaRlHAPUWMI_TYf8xXYY-XPCAsC5eeg/viewform?usp=sharing&ouid=102769540270913915599"
+          target="_blank"
+          class="btn-rsvp"
+        >
+          Confirmar Asistencia
+        </a>
+      </div> -->
+      <!-- Música de fondo -->
+      <audio id="mi-audio" loop>
+        <source src="./public/music/forever_young_saxofon.mp3" type="audio/mpeg" />
+      </audio>
     </div>
   </body>
   <script type="text/javascript" src="./public/js/scripts.js"></script>
