@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación de Graduación</title>
     <link rel="stylesheet" href="./public/css/estilos.css" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    ></script>
+    <!-- <link rel="stylesheet" media="all" href="./public/css/style.css" /> -->
   </head>
   <body>
     <div class="container">
       <h1>Invitación Especial</h1>
-      <!-- <p>Me encantaría que me acompañes en mi fiesta de graduación.</p> -->
-
-      <!-- Imagen de la invitación -->
-      <div class="invitacion" style="width: 100%; min-height: 200px">
+      <!-- ...existing code... -->
+      <div
+        class="invitacion zoom-effect"
+        style="width: 100%; min-height: 200px"
+      >
         <img
+          id="img-invitacion"
           src="./public/images/invitacion.png"
           alt="Invitación de graduación"
           width="100%"
+          style="cursor: pointer"
         />
+      </div>
+
+      <!-- Modal para imagen -->
+      <div id="modal-img" class="modal-img">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img class="modal-content-img" id="img-modal-content" />
       </div>
 
       <!-- Google Maps (reemplaza con tu ubicación) -->
       <div class="mapa">
-        <h2>📍 Lugar del evento</h2>
+        <h1>Lugar del evento</h1>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.258833145885!2d-63.109497!3d-17.827959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLTE3LjgyNzk1OSAtNjMuMTA5NDk3!5e0!3m2!1ses!2s!4v1693945600000!5m2!1ses!2s"
           allowfullscreen=""
@@ -32,4 +46,5 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript" src="./public/js/scripts.js"></script>
 </html>

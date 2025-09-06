@@ -1,16 +1,29 @@
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 0;
   padding: 0;
   text-align: center;
-  /* background-color: #7B1E3A; */
-  background-color: #f4f4f4;
+  background: radial-gradient(#f1db6e, #cda94b);
+  font-family: "Comfortaa", sans-serif;
   color: #333;
 }
+
+h1 {
+  margin: 2em 0;
+  color: #000;
+}
+
+.zoom-effect img {
+  transition: transform 0.3s ease;
+}
+.zoom-effect:hover img {
+  transform: scale(1.05);
+}
+
 .container {
   max-width: 800px;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
 }
 .invitacion {
   margin: 20px 0;
@@ -28,4 +41,39 @@ iframe {
   height: 300px;
   border: none;
   border-radius: 12px;
+}
+
+.modal-img {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+.modal-img.show {
+  display: flex;
+}
+.modal-content-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+  cursor: zoom-in;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+  user-select: none;
 }
